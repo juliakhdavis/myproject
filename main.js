@@ -1,15 +1,33 @@
 let derreklewis = 0;
 
-function movePug(){
-    var app = document.getElementsByClassName('derreklewis');
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
 
+function movePug(){
+    var app = document.querySelector('.subtitle');
+    console.log(app);
     if(derreklewis == 100){
         derreklewis = 0;
     }
 
-    for(let i = 0; i < app.length; i++){
-        app[i].style.left = derreklewis + '%';
+    
+        app.style.left = derreklewis + '%';
         console.log(derreklewis);
+        derreklewis = derreklewis+1;
+    
+} 
+function moveLewis(){
+    var app = document.querySelector('.derreklewis');
+    console.log(app);
+    if(derreklewis == 100){
+        derreklewis = 0;
     }
-    derreklewis++;
-}
+
+    
+        app.style.top = derreklewis + '%';
+        console.log(derreklewis);
+        derreklewis = derreklewis+1;
+    
+} 
