@@ -15,3 +15,10 @@ function moveLewis(){
     derreklewis = derreklewis+1;
     
 } 
+
+function moveTitle(){
+    var app = document.querySelector('.title');
+
+    app.style.rotate = title + '%';
+    title = title+1;
+}
