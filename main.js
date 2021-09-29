@@ -14,11 +14,12 @@ function moveLewis(){
     app.style.top = derreklewis + '%';
     derreklewis = derreklewis+1;
     
-} 
+}
 
 function moveTitle(){
-    var app = document.querySelector('.title');
+    console.log('Julias favorite fighter');
 
-    app.style.rotate = title + '%';
-    title = title+1;
+    for (i=0; i < 5000; i++)
 }
+
+
