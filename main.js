@@ -87,7 +87,7 @@ function input()
                     }  
                 }
 
-                if(isInList == false){
+                if(isInList == false && answer != "remove" && answer != "exit"){
                     groceryArray.push(answer);
                 }   
             }
@@ -111,18 +111,13 @@ function input()
             console.log(groceryArray);
         }
 
-        if(isInList == false && answer != "remove" && answer != "exit"){
-            groceryArray.push(answer);
-
-        }
         if(addorremove == "exit"){
             i = 100;
         }
         
-}
     console.log("This is your grocery list");
     console.log(groceryArray);
-
+}
 
 
 main();
