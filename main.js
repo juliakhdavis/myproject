@@ -22,7 +22,7 @@ function moveTitle(){
     
 }
 */
-function myLoop(){
+/*function myLoop(){
     for( let unicorn = 5000; unicorn >= 0; unicorn=unicorn-100){
         console.log(unicorn);
        unicorn = -1;
@@ -58,7 +58,7 @@ function mushroom(){
     console.log(flowerArray);
 }
 
-function input()
+/*function input()
 {
     const prompt = require("prompt-sync")();
     let groceryArray = [];
@@ -78,6 +78,7 @@ function input()
                     addorremove = answer;
                 } 
             
+                // checking duplicates
                 let isInList = false;
                 for ( let y = 0; y < groceryArray.length; y = y + 1){
             
@@ -104,7 +105,7 @@ function input()
                 }
             }
         }
-    }
+    
 
         if(addorremove == "print"){
             console.log("here is your temporary list");
@@ -114,10 +115,87 @@ function input()
         if(addorremove == "exit"){
             i = 100;
         }
-        
+    }
     console.log("This is your grocery list");
     console.log(groceryArray);
 }
+*/
 
 
-main();
+function christmasGifts(){
+
+    const prompt = require("prompt-sync")();
+    let donationArray = [];
+    let duplicateArray = [];
+    console.log("Christmas Donations");
+
+    for ( let i = 0; i < 10; i = i + 1){
+        let userOrAdmin = prompt("Are you a user or an admin? ");
+        let answer = null;
+
+        if(userOrAdmin == "user"){
+            console.log("Hello user! Please add donation item or type exit to exit list. ");
+
+            for( let a = 0; a < 10; a = a + 1){
+                
+                answer = prompt("add next item ");
+
+                if(answer == "exit"){
+                    a = 10;
+                    userOrAdmin = answer;
+                }
+
+            }
+
+                let inList = false;
+                for ( let y = 0; y < donationArray.length; y = y + 1){
+                    if(answer == donationArray[y]){
+                        console.log("repeated item moved to second list ");
+                        inList = true;
+                        duplicateArray.push(answer);
+                    }  
+                }
+
+                if(inList == false && answer != "exit"){
+                    donationArray.push(answer);
+                } 
+        }
+
+        if(userOrAdmin == "admin"){
+            console.log("Hello admin! Type remove to remove item, print to show donation items, or exit to exit list. ");
+
+            for( let x = 0; x < 10; x = x + 1){
+                let answer = prompt("What would you like to do today? ");
+
+                if( answer == "exit" || answer == "print" || answer == "remove"){
+                    x = 10;
+                    userOrAdmin = answer;
+   
+                    if(userOrAdmin == "remove"){
+                    let removeItem = prompt("enter item to remove ");
+
+                        for( let r = 0; r < donationArray.length; r = r + 1){
+
+                            if(removeItem == donationArray[r]){
+                                donationArray.splice(r,1);
+                                console.log("item removed ");
+                            }
+                        }
+                    }
+
+                    if(userOrAdmin == "print"){
+                        console.log("Here is your donation list. ");
+                        console.log(donationArray);
+                        donationArray.push(answer);
+                    }
+
+                    if(userOrAdmin == "exit"){
+                        x = 10;
+                    }
+                }    
+            }                      
+        }
+    }
+}
+
+christmasGifts();
