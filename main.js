@@ -145,8 +145,6 @@ function christmasGifts(){
                     userOrAdmin = answer;
                 }
 
-            }
-
                 let inList = false;
                 for ( let y = 0; y < donationArray.length; y = y + 1){
                     if(answer == donationArray[y]){
@@ -159,6 +157,8 @@ function christmasGifts(){
                 if(inList == false && answer != "exit"){
                     donationArray.push(answer);
                 } 
+
+            }    
         }
 
         if(userOrAdmin == "admin"){
@@ -186,7 +186,8 @@ function christmasGifts(){
                     if(userOrAdmin == "print"){
                         console.log("Here is your donation list. ");
                         console.log(donationArray);
-                        donationArray.push(answer);
+                        console.log("Here is your second donation list. ");
+                        console.log(duplicateArray);
                     }
 
                     if(userOrAdmin == "exit"){
