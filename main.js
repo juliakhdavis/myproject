@@ -127,21 +127,24 @@ function christmasGifts(){
     const prompt = require("prompt-sync")();
     let donationArray = [];
     let duplicateArray = [];
+    let masterLoop = true;
+    let userLoop = true;
+    let adminLoop = true;
     console.log("Christmas Donations");
 
-    for ( let i = 0; i < 10; i = i + 1){
+    while (masterLoop == true){
         let userOrAdmin = prompt("Are you a user or an admin? ");
         let answer = null;
 
         if(userOrAdmin == "user"){
             console.log("Hello user! Please add donation item or type exit to exit list. ");
 
-            for( let a = 0; a < 10; a = a + 1){
+            while(userLoop == true){
                 
                 answer = prompt("add next item ");
 
                 if(answer == "exit"){
-                    a = 10;
+                    userLoop = false;
                     userOrAdmin = answer;
                 }
 
@@ -164,11 +167,11 @@ function christmasGifts(){
         if(userOrAdmin == "admin"){
             console.log("Hello admin! Type remove to remove item, print to show donation items, or exit to exit list. ");
 
-            for( let x = 0; x < 10; x = x + 1){
+            while(adminLoop == true){
                 let answer = prompt("What would you like to do today? ");
 
                 if( answer == "exit" || answer == "print" || answer == "remove"){
-                    x = 10;
+                    adminLoop = false;
                     userOrAdmin = answer;
    
                     if(userOrAdmin == "remove"){
@@ -191,7 +194,7 @@ function christmasGifts(){
                     }
 
                     if(userOrAdmin == "exit"){
-                        x = 10;
+                        adminLoop = false;
                     }
                 }    
             }                      
