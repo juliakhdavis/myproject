@@ -1,63 +1,3 @@
-/*let derreklewis = 0;
-
-
-function movePug(){
-    var app = document.querySelector('.subtitle');
-    
-    app.style.left = derreklewis + '%';
-    derreklewis = derreklewis+1;
-    
-} 
-function moveLewis(){
-    var app = document.querySelector('.derreklewis');
-
-    app.style.top = derreklewis + '%';
-    derreklewis = derreklewis+1;
-    
-}
-
-function moveTitle(){
-    console.log('Julias favorite fighter');
-
-    
-}
-*/
-/*function myLoop(){
-    for( let unicorn = 5000; unicorn >= 0; unicorn=unicorn-100){
-        console.log(unicorn);
-       unicorn = -1;
-       console.log(unicorn);
-    };
-}
-function dataTypes(){
-    let Pugnumber = 10;
-    let stringviolin = "90";
-    Pugnumber = Pugnumber + 1;
-    stringviolin = stringviolin + 20;
-    console.log(Pugnumber);
-    console.log(stringviolin);
-}
-function main(){
-    //myLoop();
-   // dataTypes();
-    //mushroom();
-    input();
-}
-
-function mushroom(){
-    let flowerArray = [];
-    flowerArray.push("purple flower");
-    flowerArray.push("pink flower");
-    flowerArray.push("blue flower");
-    console.log(flowerArray);
-    flowerArray.pop();
-    console.log(flowerArray);
-    flowerArray.push("green flower");
-    console.log(flowerArray);
-    flowerArray.splice(0,2);
-    console.log(flowerArray);
-}
-
 /*function input()
 {
     const prompt = require("prompt-sync")();
@@ -122,7 +62,7 @@ function mushroom(){
 */
 
 
-function christmasGifts(){
+/*function christmasGifts(){
 
     const prompt = require("prompt-sync")();
     let donationArray = [];
@@ -134,72 +74,142 @@ function christmasGifts(){
 
     while (masterLoop == true){
         let userOrAdmin = prompt("Are you a user or an admin? ");
-        let answer = null;
 
-        if(userOrAdmin == "user"){
-            console.log("Hello user! Please add donation item or type exit to exit list. ");
-
-            while(userLoop == true){
-                
-                answer = prompt("add next item ");
-
-                if(answer == "exit"){
-                    userLoop = false;
-                    userOrAdmin = answer;
-                }
-
-                let inList = false;
-                for ( let y = 0; y < donationArray.length; y = y + 1){
-                    if(answer == donationArray[y]){
-                        console.log("repeated item moved to second list ");
-                        inList = true;
-                        duplicateArray.push(answer);
-                    }  
-                }
-
-                if(inList == false && answer != "exit"){
-                    donationArray.push(answer);
-                } 
-
-            }    
+        if(userOrAdmin == "exit"){
+            masterLoop = false;
         }
 
-        if(userOrAdmin == "admin"){
-            console.log("Hello admin! Type remove to remove item, print to show donation items, or exit to exit list. ");
-
-            while(adminLoop == true){
-                let answer = prompt("What would you like to do today? ");
-
-                if( answer == "exit" || answer == "print" || answer == "remove"){
-                    adminLoop = false;
-                    userOrAdmin = answer;
-   
-                    if(userOrAdmin == "remove"){
-                    let removeItem = prompt("enter item to remove ");
-
-                        for( let r = 0; r < donationArray.length; r = r + 1){
-
-                            if(removeItem == donationArray[r]){
-                                donationArray.splice(r,1);
-                                console.log("item removed ");
-                            }
-                        }
-                    }
-
-                    if(userOrAdmin == "print"){
-                        console.log("Here is your donation list. ");
-                        console.log(donationArray);
-                        console.log("Here is your second donation list. ");
-                        console.log(duplicateArray);
-                    }
-
-                    if(userOrAdmin == "exit"){
-                        adminLoop = false;
-                    }
-                }    
-            }                      
-        }
+       checkUser(userOrAdmin, userLoop, prompt, donationArray, duplicateArray);
+        
+       checkAdmin(userOrAdmin, adminLoop, prompt, donationArray, duplicateArray);
+        
     }
 }
 
 christmasGifts();
+
+function checkUser(input, prompt, userLoop,  donationArray, duplicateArray){
+    if(input == "user"){
+        console.log("Hello user! Please add donation item or type exit to exit list. ");
+        console.log(prompt);
+
+        while(prompt == true){
+            
+            let answer = userLoop("add next item ");
+    
+            if(answer == "exit"){
+                prompt = false;
+                input = answer;
+            }
+    
+            let inList = false;
+            for ( let y = 0; y < donationArray.length; y = y + 1){
+                if(answer == donationArray[y]){
+                    console.log("repeated item moved to second list ");
+                    inList = true;
+                    duplicateArray.push(answer);
+                }  
+            }
+    
+            if(inList == false && answer != "exit"){
+                donationArray.push(answer);
+            } 
+    
+        }    
+    }
+}
+
+function checkAdmin(userOrAdmin, adminLoop, prompt, donationArray, duplicateArray){
+
+    if(userOrAdmin == "admin"){
+        console.log("Hello admin! Type remove to remove item, print to show donation items, or exit to exit list. ");
+        adminLoop = true;
+    
+        while(adminLoop == true){
+            let answer = prompt("What would you like to do today? ");
+    
+            if( answer == "exit" || answer == "print" || answer == "remove"){
+                adminLoop = false;
+                userOrAdmin = answer;
+    
+                if(userOrAdmin == "remove"){
+                let removeItem = prompt("enter item to remove ");
+                console.log(donationArray);
+                    for( let r = 0; r < donationArray.length; r = r + 1){
+    
+                        if(removeItem == donationArray[r]){
+                            donationArray.splice(r,1);
+                            console.log("item removed ");
+                        }
+                    }
+                }
+    
+                if(userOrAdmin == "print"){
+                    console.log("Here is your donation list. ");
+                    console.log(donationArray);
+                    console.log("Here is your second donation list. ");
+                    console.log(duplicateArray);
+                }
+    
+                if(userOrAdmin == "exit"){
+                    adminLoop = false;
+                }
+            }    
+        }                      
+    }
+}
+*/
+
+/*function dogBreeds(){
+
+    let iHaveAPug = [];
+    let smallMoxie = [];
+    let bigDogs = [];
+    bigDogs.push("steven");
+    smallMoxie.push("Gabriel");
+    iHaveAPug.push("Julia");
+    console.log(bigDogs +"\n"+ smallMoxie +"\n"+ iHaveAPug);
+    dogsAreCool(bigDogs, smallMoxie, iHaveAPug);
+    console.log(bigDogs +"\n"+ smallMoxie +"\n"+ iHaveAPug);
+}
+dogBreeds();
+
+function dogsAreCool(anArray, anotherArray, thirdArray){
+
+    const prompt = require("prompt-sync")();
+        
+        for( let y = 0; y < 5; y = y + 1){
+            let puppies = prompt("what is your favorite dog ");
+            anArray.push(puppies);
+        }     
+        console.log(anArray);
+        console.log(anotherArray);
+        console.log(thirdArray);
+}*/
+
+function piesAreGreat(){
+
+    let pumpkinPie = [];
+    let applePie = [];
+    let pecanPie = [];
+    pumpkinPie.push();
+    applePie.push();
+    pecanPie.push();
+    piesAreGreat(pumpkinPie, applePie, pecanPie);
+    console.log(pumpkinPie +"\n"+ applePie +"\n"+ pecanPie);
+
+}
+piesAreGreat();
+
+function notAPie(myArray, yourArray, theirArray){
+
+    const prompt = require("prompt-sync")();
+    
+        for( let a = 0; a < 5; a = a + 1){
+            let turkey = prompt("Your favorite Thanksgiving food ");
+            console.log(turkey);
+        }
+        console.log(myArray);
+        console.log(yourArray);
+        console.log(theirArray);
+}
